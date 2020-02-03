@@ -3,7 +3,6 @@ class api_interface:
     def __init__(self):
         self.config = configparser.ConfigParser()
         self.config.read('config.ini')
-        print(self.config)
 
         self.headers = {'user-agent': 'haveibeenpwned-cli',
                         'hibp-api-key': '{}'.format(self.config.get('default', 'apiKey'))
@@ -23,9 +22,3 @@ class api_interface:
 
         return output
 
-def __init__():
-    api = api_interface()
-    result = api.check_pwned("joe.poser@gmail.com")
-    print(api.list_pwned(result))
-
-__init__()
